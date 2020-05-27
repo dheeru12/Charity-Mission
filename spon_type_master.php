@@ -12,7 +12,12 @@
 
     </head>
     <body>
-     <?php include 'navbar.php'?>;
+     <?php include 'navbar.php';
+     if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+     ?>;
        <div class="container">
 	
 <div class="row">
@@ -26,16 +31,17 @@
 	
         <form method="post" action="spon_type_insert.php">
             <div class ="form-group">
-                <input type="text" class="form-control search_text" placeholder="sponsor type code" name ="code" id="spon_type">
+                <input type="text" class="form-control search_text" placeholder="sponsor type code" name ="code" id="spon_type" required>
         </div>
         <div class ="form-group">
-           <input type="text" placeholder=" description" class="form-control search_text" name="description" id="spon_desc">
+           <input type="text" placeholder=" description" class="form-control search_text" name="description" id="spon_desc" required>
         </div>
         <div class ="form-group">
             <input type="submit"  class="btn btn-success btn-md " value="save">
-            
-        <button type="button" class="btn  btn-warning btn-md " >Cancel</button>
-        <button type="button" class="btn  btn-danger btn-md " >Exit</button>
+            <input type="reset"  class="btn  btn-warning btn-md " value="Cancel">
+       
+             <button type="button" class="btn  btn-danger btn-md text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
+        
         
         </div>
            

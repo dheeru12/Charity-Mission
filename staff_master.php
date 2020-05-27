@@ -1,4 +1,9 @@
-<?php include 'navbar.php'?>;
+<?php include'navbar.php';
+if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+?>
 <div class="container">
 	<form action="staffsave.php" method="POST">
 		<div class="form-row">
@@ -189,10 +194,11 @@
 				<input type="submit" value="save" class="btn btn-sm btn-success">
 			</div>
 			<div class="form-group col-md-4">
-				<input type="reset" value="cancel" class="btn btn-sm btn-danger">
+				<input type="reset" value="cancel" class="btn btn-sm btn-warning">
 			</div>
 			<div class="form-group col-md-4" >
-				<button class="btn btn-sm btn-default">exit</button>
+				 <button type="button" class="btn  btn-danger btn-md text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
+        
 			</div>
 		</div>
 	</form>
@@ -219,7 +225,9 @@
         
         $("#blood_grp_input").keyup(function(){
             var qual=$(this).val();
+            console.log(qual);
             $.post("staffsuggestions.php",{bldgrpsuggest:qual},function(data,status){
+                
                 $("#bloodgrpsuggest").html(data);
                 
                 $("#bgtable tr").click(function(){

@@ -5,10 +5,10 @@ $output = '';
 if (isset($_POST['query']))
 {
     $search= mysqli_real_escape_string($connect, $_POST['query']);
-    $query = "SELECT * FROM profession_master WHERE Description LIKE '%".$search."%' OR Profession_cd LIKE '%".$search."%'";
+    $query = "SELECT * FROM profession_master WHERE Description LIKE '%".$search."%' OR Profession_cd LIKE '%".$search."%' LIMIT 5";
 }
  else {
-$query = "SELECT * FROM profession_master ORDER BY Description";    
+$query = "SELECT * FROM profession_master ORDER BY Description LIMIT 5";    
 }
 
 $result = mysqli_query($connect, $query);

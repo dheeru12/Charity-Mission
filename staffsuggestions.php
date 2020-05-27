@@ -14,7 +14,6 @@ if(isset($_POST['bldgrpsuggest'])){
         <tr>
          <th>blood_grp_cd</th>
          <th>Description</th>
-
         </tr>
      ';
      while($row = mysqli_fetch_array($result))
@@ -49,7 +48,6 @@ if(isset($_POST['dsgnsuggest'])){
         <tr>
          <th>resp_cd</th>
          <th>Description</th>
-
         </tr>
      ';
      while($row = mysqli_fetch_array($result))
@@ -83,7 +81,6 @@ if(isset($_POST['mtonguesuggest'])){
         <tr>
          <th>lang_cd</th>
          <th>Description</th>
-
         </tr>
      ';
      while($row = mysqli_fetch_array($result))
@@ -117,7 +114,6 @@ if(isset($_POST['magsuggest'])){
         <tr>
          <th>lang_cd</th>
          <th>Description</th>
-
         </tr>
      ';
      while($row = mysqli_fetch_array($result))

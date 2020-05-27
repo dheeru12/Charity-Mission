@@ -1,5 +1,9 @@
-<?php include'navbar.php'?>
-
+<?php include'navbar.php';
+if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+?>
 <div class="container-fluid">
     <form action="life_sponsor_save.php" method="post">
     <div class="form-group row">
@@ -93,7 +97,7 @@
             <input type="submit"  class="btn btn-success btn-md " value="save">
             
             <button type="reset" class="btn  btn-warning btn-md " >Cancel</button>
-        <button type="button" class="btn  btn-danger btn-md " >Exit</button>
+         <button type="button" class="btn  btn-danger btn-md text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
         
         </div>
             </form>

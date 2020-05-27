@@ -6,11 +6,11 @@ if (isset($_POST['query']))
 {
     
     $search= mysqli_real_escape_string($connect, $_POST['query']);
-    $query = "SELECT * FROM qualification_master WHERE description LIKE '%".$search."%' OR qual_cd LIKE '%".$search."%'";
+    $query = "SELECT * FROM qualification_master WHERE description LIKE '%".$search."%' OR qual_cd LIKE '%".$search."%' LIMIT 5";
 }
  else {
      
-$query = "SELECT * FROM qualification_master ORDER BY Description";    
+$query = "SELECT * FROM qualification_master ORDER BY Description LIMIT 5";    
 }
 
 $result = mysqli_query($connect, $query);

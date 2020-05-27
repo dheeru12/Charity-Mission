@@ -5,10 +5,10 @@ $output = '';
 if (isset($_POST['office']))
 {
     $search= mysqli_real_escape_string($connect, $_POST['office']);
-    $query = "SELECT * FROM office_field_cd WHERE name LIKE '%".$search."%' OR office_cd LIKE '%".$search."%'";
+    $query = "SELECT * FROM office_field_cd WHERE name LIKE '%".$search."%' OR office_cd LIKE '%".$search."%' LIMIT 5";
 }
  else {
-$query = "SELECT * FROM office_field_cd ORDER BY name LIMIT 10";    
+$query = "SELECT * FROM office_field_cd ORDER BY name LIMIT 5";    
 }
 
 $result = mysqli_query($connect, $query);

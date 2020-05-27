@@ -6,11 +6,11 @@ if (isset($_POST['query']))
 {
     
     $search= mysqli_real_escape_string($connect, $_POST['query']);
-    $query = "SELECT * FROM spon_type_master WHERE description LIKE '%".$search."%' OR spon_type LIKE '%".$search."%'";
+    $query = "SELECT * FROM spon_type_master WHERE description LIKE '%".$search."%' OR spon_type LIKE '%".$search."%' LIMIT 5";
 }
  else {
      
-$query = "SELECT * FROM spon_type_master ORDER BY Description";    
+$query = "SELECT * FROM spon_type_master ORDER BY Description LIMIT 5";    
 }
 
 $result = mysqli_query($connect, $query);

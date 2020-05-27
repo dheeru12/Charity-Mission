@@ -1,7 +1,10 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
+
+  <title>Mission</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -9,13 +12,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
   
-</head>
-<body>
 
-<nav class="navbar navbar-inverse ">
+
+  <nav class="navbar navbar-inverse " >
   <div class="container-fluid">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">Mission</a>
+        <a class="navbar-brand" href="landing.php">Mission</a>
     </div>
     <ul class="nav navbar-nav">
       
@@ -31,18 +33,20 @@
             <li><a href="language_master.php">Languages</a></li>
             <li><a href="office_code.php">Office Code</a></li>
             <li><a href="spon_type_master.php">Sponsering type</a></li>
-			   <li><a href="#">Supporting/Prayer Group Details</a></li>
-			   <li><a href="#">Member</a></li>
-			  <li><a href="#">Staff</a></li>
+            <li><a href="supporting_grp_details.php">Supporting/Prayer Group Details</a></li>
+            <li><a href="life_sponsor.php">Life sponsor</a></li>
+            <li><a href="member_responsibility.php">Member responsibility</a></li>
+            <li><a href="member_master.php">Member</a></li>
+            <li><a href="staff_master.php">Staff</a></li>
 
         </ul>
       </li>
       
     </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
-	        <li><a href="#">Logout</a></li>
-        <li><a href="#">Sign up</a></li>
+        <!--<li><a href="#">Login</a></li>-->
+        <li><a href="logout.php">Logout</a></li>
+<!--        <li><a href="#">Sign up</a></li>-->
 
         
       </ul>
@@ -51,5 +55,3 @@
   
 
 
-</body>
-</html>

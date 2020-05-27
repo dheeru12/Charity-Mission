@@ -12,7 +12,12 @@
 
     </head>
     <body>
-     <?php include 'navbar.php'?>;
+     <?php include 'navbar.php';
+     if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+     ?>;
        <div class="container">
 	
 <div class="row">
@@ -21,21 +26,22 @@
 <h1 style="text-align:center;">
 	Add a New Profession
 </h1>
-	<div class="col-md-3"></div>
+    <div class="col-md-3"></div>
 	<div class="col-md-6">
 	
         <form method="post" action="profession_insert.php">
             <div class ="form-group">
-                <input type="text" class="form-control search_text" placeholder="profession code" name ="code" id="prof_cd">
+                <input type="text" class="form-control search_text" placeholder="profession code" name ="code" id="prof_cd" required>
         </div>
         <div class ="form-group">
-           <input type="text" placeholder=" description" class="form-control search_text" name="description" id="prof_desc">
+           <input type="text" placeholder=" description" class="form-control search_text" name="description" id="prof_desc" required>
         </div>
         <div class ="form-group">
-            <input type="submit"  class="btn btn-success btn-md " value="save">
-            
-        <button type="button" class="btn  btn-warning btn-md " >Cancel</button>
-        <button type="button" class="btn  btn-danger btn-md " >Exit</button>
+             <input type="submit"  class="btn btn-success btn-md " value="save">
+            <input type="reset"  class="btn  btn-warning btn-md " value="Cancel">
+       
+             <button type="button" class="btn  btn-danger btn-md text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
+        
         
         </div>
            

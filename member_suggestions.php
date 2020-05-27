@@ -13,7 +13,6 @@ if(isset($_POST['suggestion'])){
         <tr>
          <th>code</th>
          <th>Description</th>
-
         </tr>
      ';
      while($row = mysqli_fetch_array($result))
@@ -45,7 +44,6 @@ if(isset($_POST['professionsuggest'])){
         <tr>
          <th>code</th>
          <th>Description</th>
-
         </tr>
      ';
      while($row = mysqli_fetch_array($result))
@@ -231,4 +229,3 @@ if(isset($_POST['pincodesuggest'])){
    
 }
 ?>
-

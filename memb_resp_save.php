@@ -13,5 +13,3 @@ if($result!=TRUE){
     
     echo "done";
 ?>
-
-

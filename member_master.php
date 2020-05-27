@@ -11,7 +11,12 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <?php include 'navbar.php'?>;
+       <?php include'navbar.php';
+if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+?>
         <div class="container">
 	<form action="member_save.php" method="POST">
 		<div class="form-row">
@@ -129,7 +134,8 @@ and open the template in the editor.
 				<input type="reset" value="cancel" class="btn btn-sm btn-danger">
 			</div>
 			<div class="form-group col-md-4" >
-				<button class="btn btn-sm btn-default">exit</button>
+				 <button type="button" class="btn  btn-danger btn-md text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
+        
 			</div>
 			
 		</div>
@@ -143,6 +149,7 @@ and open the template in the editor.
                     var dist=$("#districttxt").val();
                     $.post("member_suggestions.php",{suggestion:dist},function(data,status){
                         $("#distsuggest").html(data);
+                        
                         $('#dtable tr').click(function(){
                             var tableData = $(this).children("td").map(function() {
                                 return $(this).text();

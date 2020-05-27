@@ -14,19 +14,19 @@ switch ($_POST['geo']){
  if ($_POST['search_key'] !=='' && $_POST['geo'] !=='district_master'){
     
     $search= mysqli_real_escape_string($connect, $_POST['search_key']);
-    $query = "SELECT * FROM ". $_POST['geo']." WHERE description LIKE '%".$search."%' OR $col LIKE '%".$search."%'"; 
+    $query = "SELECT * FROM ". $_POST['geo']." WHERE description LIKE '%".$search."%' OR $col LIKE '%".$search."%' LIMIT 5"; 
  }
  elseif($_POST['search_key'] !=='' && $_POST['geo'] ==='district_master')
  {
      
      $search= mysqli_real_escape_string($connect, $_POST['search_key']);
-    $query = "SELECT d.district_cd, d.description FROM district_master d join state_master s on d.state_cd = s.state_cd WHERE d.description LIKE '%".$search."%' OR district_cd LIKE '%".$search."%' OR d.state_cd LIKE '%".$search."%' OR s.state_cd LIKE '%".$search."%'"; 
+    $query = "SELECT d.district_cd, d.description FROM district_master d join state_master s on d.state_cd = s.state_cd WHERE d.description LIKE '%".$search."%' OR district_cd LIKE '%".$search."%' OR d.state_cd LIKE '%".$search."%' OR s.state_cd LIKE '%".$search."%' LIMIT 5"; 
  }
  
 else
 {
     
-    $query = "SELECT * FROM ".$_POST['geo']." order by description";
+    $query = "SELECT * FROM ".$_POST['geo']." order by description LIMIT 5";
     
 }
 

@@ -45,8 +45,8 @@ if( !(isset($_SESSION['user'])))
          <div class ="form-group">
             <input type="submit"  class="btn btn-success btn-md " value="save">
             
-        <button type="button" class="btn  btn-warning btn-md " >Cancel</button>
-        <button type="button" class="btn  btn-danger btn-md " >Exit</button>
+            <button type="reset" class="btn  btn-warning btn-md " >Cancel</button>
+        <button type="button" class="btn  btn-danger btn-md text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
         
         </div>
             </form>
